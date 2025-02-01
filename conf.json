@@ -1,0 +1,17 @@
+{
+
+    "host": "mysql-gabriel-default03022025.l.aivencloud.com",
+ 
+    "user": "avnadmin",
+ 
+    "password": "AVNS_rHp9_75veAmMTjeLXji",
+ 
+    "database": "defaultdb",
+
+    "port":  12998,
+
+    "ssl" :{
+        "ca": "/ca.pem"
+    }
+ 
+ }
