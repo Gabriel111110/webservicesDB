@@ -7,5 +7,24 @@
     "mysql": "^2.18.1",
     "mysql2": "^3.12.0",
     "path": "^0.12.7"
-  }
+  },
+  "name": "webservicesdb",
+  "version": "1.0.0",
+  "description": "todo list con db",
+  "main": "server.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gabriel111110/webservicesDB.git"
+  },
+  "author": "marragabriel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gabriel111110/webservicesDB/issues"
+  },
+  "homepage": "https://github.com/Gabriel111110/webservicesDB#readme"
 }
