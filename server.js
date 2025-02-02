@@ -19,7 +19,7 @@ let connection = mysql.createConnection ({
    database: "defaultdb",
    ssl: {
    ca: fs. readFileSync(__dirname +
-   '/ca.pem' )
+   '/ca.pem')
    }
 });
 
@@ -34,7 +34,7 @@ app.use(bodyParser.urlencoded({
 
 const path = require('path');
 
-app.use("/", express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 
@@ -125,7 +125,7 @@ const insert = (todo) => {
    
       let sql = template.replace("$NAME", todo.name);
    
-      sql = sql.replace("$COMPLETED", todo.completed);
+      sql = sql.replace("$COMPLETED", todo.completed ? 1 : 0);
    
       return executeQuery(sql); 
    
@@ -142,14 +142,12 @@ const select = () => {
    
 }  
 
-const server = http.createServer(app);
 
-server.listen(80, () => {
-  console.log("- server running");
-});
+
 
 createTable().then(() => {
-   insert({name: "test " + new Date().getTime(), completed: false}).then((result) => {
-      select().then(console.log);
+   const server = http.createServer(app);
+   server.listen(80, () => {
+      console.log("-server running");
    });
 });
